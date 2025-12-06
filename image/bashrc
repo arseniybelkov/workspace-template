@@ -1,0 +1,26 @@
+cat <<EOF
+Hi, $(whoami)!
+Welcome to Docker container '${REPO_NAME}'!
+(___-){
+===================================
+
+Type 'exit' to exit =)
+EOF
+
+# ------------------------------------------------------------------------------
+
+# Default terminal init
+
+source ~/.profile
+
+# ------------------------------------------------------------------------------
+
+# Run SSH agent and add key
+
+eval $(ssh-agent -s) > /dev/null
+
+# ------------------------------------------------------------------------------
+
+# Starting directory
+
+cd "/workspace/${REPO_NAME}"
