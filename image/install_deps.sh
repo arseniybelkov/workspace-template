@@ -4,27 +4,25 @@ set -e -x
 
 echo "Installing dependencies"
 
-apt-get update
+apt update
 
-DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
+DEBIAN_FRONTEND="noninteractive" apt -y install tzdata
 
-apt-get install -y software-properties-common
+apt install -y software-properties-common
 
-add-apt-repository -y ppa:ubuntu-toolchain-r/test
-
-apt-get install -y wget rsync
+apt install -y wget rsync
 
 # LLVM
 wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add -
-add-apt-repository -y "deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy-19 main"
+add-apt-repository -y "deb http://apt.llvm.org/noble/ llvm-toolchain-noble-19 main"
 
 # CMake
 wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc | apt-key add -
-apt-add-repository 'deb https://apt.kitware.com/ubuntu/ jammy main'
+apt-add-repository 'deb https://apt.kitware.com/ubuntu/ noble main'
 
-apt-get update
+apt update
 
-apt-get install -y \
+apt install -y \
 	ssh \
 	vim \
 	make \
@@ -47,16 +45,10 @@ apt-get install -y \
 	binutils-dev \
 	libdwarf-dev \
 	libdw-dev \
-	python3 \
-	python3-pip \
-	python3-venv \
 	ca-certificates \
 	openssh-server \
-	autoconf
+	autoconf \
+	man-db \
+	curl
 
-pip3 install \
-	click \
-	gitpython \
-	python-gitlab \
-	termcolor \
-	virtualenv
+curl -LsSf https://astral.sh/uv/install.sh | sh
