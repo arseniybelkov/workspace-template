@@ -5,6 +5,7 @@ ENV LC_ALL=C.UTF-8
 
 # SSH
 RUN apt update && apt upgrade -y
+RUN apt install git-all -y
 RUN apt install openssh-server -y
 
 ENV CXX="/usr/bin/clang++-19"
