@@ -1,3 +1,6 @@
+# Workspace wrapper
+Wraps your repo into docker container.
+
 ## Requirements
 - [just](https://github.com/casey/just)
 - [docker](https://www.docker.com/) and [docker-compose](https://docs.docker.com/compose/install/)
