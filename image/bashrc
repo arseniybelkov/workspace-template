@@ -1,10 +1,7 @@
 cat <<EOF
 Hi, $(whoami)!
-Welcome to Docker container '${REPO_NAME}'!
-(___-){
 ===================================
-
-Type 'exit' to exit =)
+Type 'exit' to exit
 EOF
 
 # ------------------------------------------------------------------------------
