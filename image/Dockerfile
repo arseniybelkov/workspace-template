@@ -1,11 +1,12 @@
 FROM ubuntu:24.04
 
+ADD install_deps.sh /
+RUN sh install_deps.sh
+
 ENV LANG=C.UTF-8
 ENV LC_ALL=C.UTF-8
 
 # SSH
-RUN apt update && apt upgrade -y
-RUN apt install git-all -y
 RUN apt install sudo -y
 RUN apt install openssh-server -y
 
