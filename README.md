@@ -12,3 +12,11 @@ Wraps your repo into docker container.
 - ```just restart``` - restart the container after e.g. computer restart.
 
 If you want for your user (inside container) to have sudo priviliges, simple login into container as `root` and add the user to `sudo` group.
+
+# Attaching IDEs to the container 
+## VSCode:
+After creating the container and logging in (`just build` and `just login`):
+- Attach VSCode to the container
+- Open `Dev Containers: Open Attached Container Configuration File...` (Find it via `Ctrl-Shift-P`) and add line `"remoteUser": "your-username"`.
+- Open `Settings > Terminal Integrated Default Profile: Linux` in the Workspace Tab and switch it to `bash`.
+- `Ctrl-Shift-P > Developer: Reload Window`
