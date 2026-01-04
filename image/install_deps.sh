@@ -24,6 +24,7 @@ apt update
 
 # also might need to install
 # https://github.com/llvm/llvm-project/issues/99819
+# sudo apt install clang-19 libclang-19-dev libllvm19 llvm-19-dev
 
 apt install -y \
 	ssh \
