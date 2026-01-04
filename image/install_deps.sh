@@ -22,6 +22,9 @@ apt-add-repository 'deb https://apt.kitware.com/ubuntu/ noble main'
 
 apt update
 
+# also might need to install
+# https://github.com/llvm/llvm-project/issues/99819
+
 apt install -y \
 	ssh \
 	vim \
