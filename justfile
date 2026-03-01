@@ -23,6 +23,7 @@ alias i := init
 alias b := build
 alias l := login
 alias r := restart
+alias s := stop
 
 # Should be called only after cloning the *-workspace repo.
 # Attaches target repo as a submodule and pulls it.
@@ -48,6 +49,11 @@ login container=DEFAULT_CONTAINER_NAME user_id=DEFAULT_USER_ID group_id=DEFAULT_
 restart container=DEFAULT_CONTAINER_NAME workspace=DEFAULT_HOST_WORKSPACE_DIR:
     just compose_config {{container}} {{workspace}} {{DEFAULT_DOCKER_COMPOSE_PATH}}
     just compose_restart {{container}} {{workspace}} {{DEFAULT_DOCKER_COMPOSE_PATH}}
+
+# Stop the container
+stop container=DEFAULT_CONTAINER_NAME workspace=DEFAULT_HOST_WORKSPACE_DIR:
+    export HOST_WORKSPACE_DIR={{ workspace }} && export CONTAINER_NAME={{ container }} && \
+    docker compose -f {{ DEFAULT_DOCKER_COMPOSE_PATH }} stop
 
 [private]
 compose_config container host_workspace_dir docker_compose_path:
