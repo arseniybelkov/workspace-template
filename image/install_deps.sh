@@ -53,6 +53,7 @@ apt install -y \
 	openssh-server \
 	autoconf \
 	man-db \
+	valgrind \
 	curl
 
 curl -LsSf https://astral.sh/uv/install.sh | sh
